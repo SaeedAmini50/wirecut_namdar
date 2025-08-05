@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-*d4s=r&%zygnu_(0x7s(2l8%65=6m#9y50aqezsw07t#a2-m@#
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['cncnamdar.ir','www.cncnamdar.ir','localhost','127.0.0.1']
+ALLOWED_HOSTS = ['wirecutnamdar.ir','www.wirecutnamdar.ir','localhost','127.0.0.1']
 
 # Application definition
 INSTALLED_APPS = [
