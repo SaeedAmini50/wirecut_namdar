@@ -1,0 +1,51 @@
+{% load static %}
+
+{% block content %}
+<!-- بخش تیم -->
+<div class="team">
+    <div class="container">
+        <div class="section-header text-center">
+            <p>تیم ما</p>
+            <h2>با تیم متخصص ما آشنا شوید</h2>
+        </div>
+        <div class="row">
+            {% for employee in employees %}
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="team-item">
+                    <div class="team-img">
+                        {% if employee.image %}
+                            <img src="{{ employee.image.url }}" alt="{{ employee.first_name }} {{ employee.last_name }}">
+                        {% else %}
+                            <img src="{% static 'img/team-1.jpg' %}" alt="{{ employee.first_name }} {{ employee.last_name }}">
+                        {% endif %}
+                    </div>
+                    <div class="team-text">
+                        <h2>{{ employee.first_name }} {{ employee.last_name }}</h2>
+                        <p>{{ employee.job_title }}</p>
+                    </div>
+                    <div class="team-social">
+                        {% if employee.whatsapp_link %}
+                            <a class="social-wa" href="{{ employee.whatsapp_link }}" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        {% endif %}
+                        {% if employee.telegram_link %}
+                            <a class="social-tg" href="{{ employee.telegram_link }}" target="_blank"><i class="fab fa-telegram"></i></a>
+                        {% endif %}
+                        {% if employee.email %}
+                            <a class="social-em" href="mailto:{{ employee.email }}"><i class="fas fa-envelope"></i></a>
+                        {% endif %}
+                        {% if employee.phone %}
+                            <a class="social-ph" href="tel:{{ employee.phone }}"><i class="fas fa-phone"></i></a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            {% empty %}
+            <div class="col-12 text-center">
+                <p>هیچ کارمندی یافت نشد</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<!-- پایان بخش تیم -->
+{% endblock %}

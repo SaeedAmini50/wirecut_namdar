@@ -1,0 +1,143 @@
+{% extends 'base.html' %}
+{% load static%}
+{%  block content %} 
+
+{% load static %}
+
+<!-- شروع اسلایدر (Carousel) -->
+<div id="carousel" class="carousel slide" data-ride="carousel">
+    <!-- نشانگرهای اسلایدر -->
+    <ol class="carousel-indicators">
+        {% for image in main_images %}
+            <li data-target="#carousel" data-slide-to="{{ forloop.counter0 }}" {% if forloop.first %}class="active"{% endif %}></li>
+        {% endfor %}
+    </ol>
+ 
+    
+    <div class="carousel-inner">
+        {% for image in main_images %}
+            <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                <img src="{{ image.image.url }}" alt="{{ image.title }}">
+                <div class="carousel-caption">
+                    {% if image.description %}
+                        <p class="animated fadeInRight">{{ image.description }}</p>
+                    {% endif %}
+                    <h1 class="animated fadeInLeft">{{ image.title }}</h1>
+                    <a class="btn animated fadeInUp" href="#">مشاوره رایگان</a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+    <!-- دکمه‌های کنترل اسلایدر -->
+    <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">قبلی</span>
+    </a>
+    <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">بعدی</span>
+    </a>
+</div>
+<!-- پایان اسلایدر -->
+
+<!-- شروع بخش ویژگی‌ها -->
+<div class="feature wow fadeInUp" data-wow-delay="0.1s">
+    <div class="container-fluid">
+        <div class="row align-items-center">
+            <!-- ویژگی اول: نیروی کار متخصص -->
+            <div class="col-lg-4 col-md-12">
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="flaticon-worker"></i>
+                    </div>
+                    <div class="feature-text">
+                        <h3>تیم متخصص و مجرب</h3>
+                        <p>ما با بهره‌گیری از متخصصان حرفه‌ای، بهترین کیفیت را در پروژه‌های ساخت و ساز ارائه می‌دهیم.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ویژگی دوم: کار با کیفیت -->
+            <div class="col-lg-4 col-md-12">
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="flaticon-building"></i>
+                    </div>
+                    <div class="feature-text">
+                        <h3>کیفیت و دوام بالا</h3>
+                        <p>تمام پروژه‌های ما با استفاده از مصالح باکیفیت و استانداردهای جهانی انجام می‌شوند.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ویژگی سوم: پشتیبانی ۲۴/۷ -->
+            <div class="col-lg-4 col-md-12">
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="flaticon-call"></i>
+                    </div>
+                    <div class="feature-text">
+                        <h3>پشتیبانی ۲۴ ساعته</h3>
+                        <p>تیم پشتیبانی ما در تمام روزهای هفته آماده پاسخگویی و ارائه خدمات به مشتریان عزیز است.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- پایان بخش ویژگی‌ها -->
+
+
+            {%  block about2 %} {% include 'about2.html' %} {% endblock %}
+
+
+
+
+
+
+
+
+            {%  block number2 %} {% include 'number2.html' %} {% endblock %}
+
+
+
+
+
+            
+
+
+            {%  block service2 %} {% include 'service2.html' %} {% endblock %}
+
+
+
+
+
+
+
+            {%  block video2 %} {% include 'video2.html' %} {% endblock %}
+
+
+
+
+
+
+            {%  block team2 %} {% include 'team2.html' %} {% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+            {%  block weblog2 %} {% include 'weblog2.html' %} {% endblock %}
+
+
+
+            <!-- FOOTER -->
+{% endblock %}
+

@@ -1,0 +1,24 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block content %}
+    <!-- محتوای اصلی صفحه بدون تغییر باقی می‌ماند -->
+    <div class="original-content">
+        <!-- محتوای اصلی single.html -->
+    </div>
+
+    <!-- بخش جدید برای نمایش TextInfo -->
+    <div class="text-info-content">
+        {% if texts %}
+            {% for text in texts %}
+                <div class="text-entry">
+                    {% if text.image %}
+                        <img src="{{ text.image.url }}" alt="{{ text.title }}" />
+                    {% endif %}
+                    <h2>{{ text.title }}</h2>
+                    <p>{{ text.content }}</p>
+                </div>
+            {% endfor %}
+        {% endif %}
+    </div>
+{% endblock %} 

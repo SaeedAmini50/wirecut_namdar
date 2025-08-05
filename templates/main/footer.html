@@ -1,0 +1,98 @@
+{% load static %}
+<!-- شروع فوتر (پاورقی) -->
+            <div class="footer wow fadeIn" data-wow-delay="0.3s">
+                <div class="container">
+                    <div class="row">
+                        <!-- اطلاعات تماس دفتر -->
+                        <div class="col-md-6 col-lg-3">
+                            <div class="footer-contact">
+                                <h2>اطلاعات تماس</h2>
+                                <p><i class="fa fa-map-marker-alt"></i>{{ footer_info.location|default:"TEHRAN, IRAN" }}</p>
+                                <p><i class="fa fa-phone-alt"></i>{{ footer_info.phone|default:"00989123456789" }}</p>
+                                <p><i class="fa fa-envelope"></i>{{ footer_info.email|default:"H.P.N.@gmail.com" }}</p>
+                                <div class="footer-social">
+                                    {% if footer_info.telegram_link %}
+                                        <a href="{{ footer_info.telegram_link }}"><i class="fab fa-telegram"></i></a>
+                                    {% endif %}
+                                    {% if footer_info.facebook_link %}
+                                        <a href="{{ footer_info.facebook_link }}"><i class="fab fa-facebook-f"></i></a>
+                                    {% endif %}
+                                    {% if footer_info.aparat_link %}
+                                        <a href="{{ footer_info.aparat_link }}"><i class="fab fa-youtube"></i></a>
+                                    {% endif %}
+                                    {% if footer_info.instagram_link %}
+                                        <a href="{{ footer_info.instagram_link }}"><i class="fab fa-instagram"></i></a>
+                                    {% endif %}
+                                    {% if footer_info.whatsapp_link %}
+                                        <a href="{{ footer_info.whatsapp_link }}"><i class="fab fa-whatsapp"></i></a>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- لینک‌های خدمات -->
+                        <div class="col-md-6 col-lg-3">
+                            <div class="footer-link">
+                                <h2>خدمات ما</h2>
+                                <a href="">سابت پرس شیلنگ</a>
+                                <a href="">سایت وایرکات</a>
+                                <a href="">سایت سی ان سی</a>
+                 
+                            </div>
+                        </div>
+
+                        <!-- لینک‌های صفحات مهم -->
+                        <div class="col-md-6 col-lg-3">
+                            <div class="footer-link">
+                                <h2>صفحات مفید</h2>
+                                <a href="">درباره ما</a>
+                                <a href="">تماس با ما</a>
+                                <a href="">تیم ما</a>
+                                <a href="">خدمات ما</a>
+                                <a href="">نظرات مشتریان</a>
+                            </div>
+                        </div>
+
+                        <!-- بخش عضویت در خبرنامه -->
+                        <div class="col-md-6 col-lg-3">
+                            <div class="newsletter">
+                                <h2>عضویت در خبرنامه</h2>
+                                <p>
+                                    برای دریافت جدیدترین اخبار و اطلاعات، ایمیل خود را وارد کنید.
+                                </p>
+                                <div class="form">
+                                    <input class="form-control" placeholder="ایمیل خود را وارد کنید">
+                                    <button class="btn">ارسال</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- منوی فوتر -->
+                <div class="container footer-menu">
+                    <div class="f-menu">
+                        <a href="">شرایط استفاده</a>
+                        <a href="">حریم خصوصی</a>
+                        <a href="">کوکی‌ها</a>
+                        <a href="">راهنما</a>
+                        <a href="">سوالات متداول</a>
+                    </div>
+                </div>
+
+                <!-- بخش کپی‌رایت -->
+                <div class="container copyright">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p>&copy; <a href="#">HPN</a>، تمامی حقوق محفوظ است.</p>
+                        </div>
+						
+                        <div class="col-md-6">
+                            <p>طراحی شده توسط <a href="https://htmlcodex.com">HTML Codex</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- پایان فوتر (پاورقی) -->
+
+            <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>

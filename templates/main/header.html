@@ -1,0 +1,104 @@
+{% load static %}
+    <!-- شروع نوار بالای صفحه -->
+    <div class="top-bar">
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <!-- بخش لوگو -->
+                <div class="col-lg-4 col-md-12">
+                    <div class="logo">
+                        {% if header_info and header_info.logo %}
+                            <a href="{% url 'project:home' %}">
+                                <img src="{{ header_info.logo.url }}" alt="لوگو">
+                            </a>
+                        {% else %}
+                            <a href="{% url 'project:home' %}">
+                                <h1>{{ header_info.company_name|default:"WIRECUT NAMDAR" }}</h1>
+                            </a>
+                        {% endif %}
+                    </div>
+                </div>
+                
+                <!-- اطلاعات تماس و ساعت کاری -->
+                <div class="col-lg-8 col-md-7 d-none d-lg-block">
+                    <div class="row">
+                        <!-- ساعت کاری -->
+                        <div class="col-4">
+                            <div class="top-bar-item">
+                                <div class="top-bar-icon">
+                                    <i class="flaticon-calendar"></i>
+                                </div>
+                                <div class="top-bar-text">
+                                    <h3>ساعات کاری</h3>
+                                    <p>{{ header_info.working_hours|default:"دوشنبه - جمعه، ۸:۰۰ - ۹:۰۰" }}</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- شماره تماس -->
+                        <div class="col-4">
+                            <div class="top-bar-item">
+                                <div class="top-bar-icon">
+                                    <i class="flaticon-call"></i>
+                                </div>
+                                <div class="top-bar-text">
+                                    <h3>تماس با ما</h3>
+                                    <p>{{ header_info.phone|default:"+۰۱۲ ۳۴۵ ۶۷۸۹" }}</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- ایمیل -->
+                        <div class="col-4">
+                            <div class="top-bar-item">
+                                <div class="top-bar-icon">
+                                    <i class="flaticon-send-mail"></i>
+                                </div>
+                                <div class="top-bar-text">
+                                    <h3>ایمیل ما</h3>
+                                    <p>{{ header_info.email|default:"info@example.com" }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- پایان نوار بالای صفحه -->
+    <!-- شروع نوار ناوبری -->
+    <div class="nav-bar">
+        <div class="container-fluid">
+            <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+                <!-- دکمه منو برای نسخه موبایل -->
+                <a href="#" class="navbar-brand">منو</a>
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- لینک‌های منو -->
+                <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                    <div class="navbar-nav ml-auto">
+                        <a href="{% url 'project:home' %}" class="nav-item nav-link {% if request.resolver_match.url_name == 'home' %}active{% endif %}">خانه</a>
+                        <a href="{% url 'project:about' %}" class="nav-item nav-link {% if request.resolver_match.url_name == 'about' %}active{% endif %}">درباره ما</a>
+                        <a href="{% url 'project:service' %}" class="nav-item nav-link {% if request.resolver_match.url_name == 'service' %}active{% endif %}">خدمات</a>
+                        <a href="{% url 'project:team' %}" class="nav-item nav-link {% if request.resolver_match.url_name == 'team' %}active{% endif %}">تیم</a>
+                        <a href="{% url 'textInfo:portfolio' %}" class="nav-item nav-link {% if request.resolver_match.url_name == 'portfolio' %}active{% endif %}">نمونه کارها</a>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle {% if request.resolver_match.url_name in 'blog,cnc,wirecut' %}active{% endif %}" data-toggle="dropdown">صفحات</a>
+                            <div class="dropdown-menu">
+                                <a href="{% url 'project:blog' %}" class="dropdown-item {% if request.resolver_match.url_name == 'blog' %}active{% endif %}">صفحه وبلاگ</a>
+                                <a href="{% url 'textInfo:cnc' %}" class="dropdown-item {% if request.resolver_match.url_name == 'cnc' %}active{% endif %}">سی ان سی</a>
+                                <a href="{% url 'textInfo:wirecut' %}" class="dropdown-item {% if request.resolver_match.url_name == 'wirecut' %}active{% endif %}">وایرکات</a>
+                            </div>
+                        </div>
+                        <a href="{% url 'project:contact' %}" class="nav-item nav-link {% if request.resolver_match.url_name == 'contact' %}active{% endif %}">تماس با ما</a>
+                    </div>
+                    <!-- دکمه دانلود -->
+                    <div class="mr-auto">
+                        <a class="btn" href="#">همین حالا باما در ارتباط بشید</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <!-- پایان نوار ناوبری -->

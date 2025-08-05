@@ -1,0 +1,33 @@
+{% load static %}
+
+<!-- شروع بخش درباره ما -->
+            <div class="about wow fadeInUp" data-wow-delay="0.1s">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <!-- تصویر درباره ما -->
+                        <div class="col-lg-5 col-md-6">
+                            <div class="about-img">
+                                {% if company_info and company_info.image %}
+                                    <img src="{{ company_info.image.url }}" alt="تصویر درباره ما">
+                                {% else %}
+                                    <img src="{% static 'img/about.jpg' %}" alt="تصویر درباره ما">
+                                {% endif %}
+                            </div>
+                        </div>
+                        
+                        <!-- متن درباره ما -->
+                        <div class="col-lg-7 col-md-6">
+                            <div class="section-header text-right">
+                                <p>به {{ header_info.company_name|default:"HPN" }} خوش آمدید</p>
+                                <h2>{{ company_info.title|default:"پیشرو در صنعت با بیش از ۲۵ سال تجربه" }}</h2>
+                            </div>
+                            <div class="about-text">
+                                {{ company_info.content|default:"شرکت HPN با بیش از دو دهه تجربه، یکی از معتبرترین مجموعه‌ها در حوزه صنعت و تولید است. ما با بهره‌گیری از فناوری‌های نوین و تیمی متخصص، خدماتی باکیفیت و مطمئن ارائه می‌دهیم. فعالیت‌های ما شامل طراحی، تولید و اجرای پروژه‌های صنعتی متنوع می‌شود. از تامین قطعات صنعتی تا اجرای پروژه‌های زیرساختی، هدف ما ارائه بهترین راهکارها برای مشتریان عزیز است. تعهد به کیفیت، دقت در اجرا و رضایت مشتری، اصول اساسی کار ما هستند."|linebreaks }}
+                                <a class="btn" href="{% url 'textInfo:cnc' %}">بیشتر بدانید در مورد cnc</a>
+                                <a class="btn" href="{% url 'textInfo:wirecut' %}"> بیشتر بدانید در مورد wirecut</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+<!-- پایان بخش درباره ما -->

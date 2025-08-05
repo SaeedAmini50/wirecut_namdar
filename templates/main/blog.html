@@ -1,0 +1,117 @@
+{% extends 'base.html' %}
+{% load static%}
+{%  block content %} 
+
+            
+            <!-- Page Header Start -->
+            <div class="page-header">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <h2>Our Blog</h2>
+                        </div>
+                        <div class="col-12">
+                            <a href="">Home</a>
+                            <a href="">Our Blog</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Page Header End -->
+            <!-- شروع بخش وبلاگ -->
+            <div class="blog">
+                <div class="container">
+                    <div class="section-header text-center">
+                        <p>آخرین مقالات</p>
+                        <h2>جدیدترین مطالب وبلاگ ما</h2>
+                    </div>
+                    <div class="row blog-page">
+                        <!-- مقاله ۱ -->
+                        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+                            <div class="blog-item">
+                                <div class="blog-img">
+                                    <img src="{% static '' %}img/blog-1.jpg" alt="تصویر مقاله">
+                                </div>
+                                <div class="blog-title">
+                                    <h3>عنوان مقاله</h3>
+                                    <a class="btn" href="">+</a>
+                                </div>
+                                <div class="blog-meta">
+                                    <p>نویسنده: <a href="">مدیر</a></p>
+                                    <p>دسته‌بندی: <a href="">ساخت و ساز</a></p>
+                                </div>
+                                <div class="blog-text">
+                                    <p>
+                                        توضیح کوتاهی درباره این مقاله که مقدمه‌ای بر محتوای آن می‌باشد.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- مقاله ۲ -->
+                        <div class="col-lg-4 col-md-6 wow fadeInUp">
+                            <div class="blog-item">
+                                <div class="blog-img">
+                                    <img src="{% static '' %}img/blog-2.jpg" alt="تصویر مقاله">
+                                </div>
+                                <div class="blog-title">
+                                    <h3>عنوان مقاله</h3>
+                                    <a class="btn" href="">+</a>
+                                </div>
+                                <div class="blog-meta">
+                                    <p>نویسنده: <a href="">مدیر</a></p>
+                                    <p>دسته‌بندی: <a href="">ساخت و ساز</a></p>
+                                </div>
+                                <div class="blog-text">
+                                    <p>
+                                        توضیح کوتاهی درباره این مقاله که مقدمه‌ای بر محتوای آن می‌باشد.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- مقاله ۳ -->
+                        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+                            <div class="blog-item">
+                                <div class="blog-img">
+                                    <img src="{% static '' %}img/blog-3.jpg" alt="تصویر مقاله">
+                                </div>
+                                <div class="blog-title">
+                                    <h3>عنوان مقاله</h3>
+                                    <a class="btn" href="">+</a>
+                                </div>
+                                <div class="blog-meta">
+                                    <p>نویسنده: <a href="">مدیر</a></p>
+                                    <p>دسته‌بندی: <a href="">ساخت و ساز</a></p>
+                                </div>
+                                <div class="blog-text">
+                                    <p>
+                                        توضیح کوتاهی درباره این مقاله که مقدمه‌ای بر محتوای آن می‌باشد.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- سایر مقالات مشابه -->
+                        
+                    </div>
+                    
+                    <!-- بخش شماره‌گذاری صفحات -->
+                    <div class="row">
+                        <div class="col-12">
+                            <ul class="pagination justify-content-center">
+                                <li class="page-item disabled"><a class="page-link" href="#">قبلی</a></li>
+                                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item active"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item"><a class="page-link" href="#">بعدی</a></li>
+                            </ul> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- پایان بخش وبلاگ -->
+
+<!-- FOOTER -->
+{% endblock %}
+

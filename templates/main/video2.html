@@ -1,0 +1,56 @@
+{% load static %}
+
+            <!-- شروع بخش ویدیو -->
+            <div class="video wow fadeIn" data-wow-delay="0.1s">
+                <div class="container">
+                    {% for video in videos %}
+                        {% if video.is_active %}
+                            <!-- دکمه پخش ویدیو که پنجره مودال را باز می‌کند -->
+                            <button type="button" class="btn-play" data-toggle="modal" 
+                                {% if video.video_file %}
+                                    data-src="{{ video.video_file.url }}"
+                                {% else %}
+                                    data-src="{{ video.video_url }}"
+                                {% endif %}
+                                data-target="#videoModal{{ video.id }}">
+                                <span></span>
+                            </button>
+                            <h3 class="text-white mt-3">{{ video.title }}</h3>
+                            {% if video.description %}
+                                <p class="text-white">{{ video.description }}</p>
+                            {% endif %}
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+
+            <!-- پنجره‌های مودال برای نمایش ویدیوها -->
+            {% for video in videos %}
+                {% if video.is_active %}
+                    <div class="modal fade" id="videoModal{{ video.id }}" tabindex="-1" role="dialog" aria-labelledby="videoModalLabel{{ video.id }}" aria-hidden="true">
+                        <div class="modal-dialog modal-lg" role="document">
+                            <div class="modal-content">
+                                <div class="modal-body">
+                                    <!-- دکمه بستن پنجره مودال -->
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="بستن">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>        
+                                    <!-- نمایش ویدیو با نسبت 16:9 -->
+                                    <div class="embed-responsive embed-responsive-16by9">
+                                        {% if video.video_file %}
+                                            <video class="embed-responsive-item" controls>
+                                                <source src="{{ video.video_file.url }}" type="video/mp4">
+                                                مرورگر شما از پخش ویدیو پشتیبانی نمی‌کند.
+                                            </video>
+                                        {% else %}
+                                            <iframe class="embed-responsive-item" src="{{ video.video_url }}" id="video{{ video.id }}" allowscriptaccess="always" allow="autoplay"></iframe>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+            <!-- پایان بخش ویدیو -->
+

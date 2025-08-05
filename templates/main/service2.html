@@ -1,0 +1,44 @@
+{% load static %}
+
+{% block content %}
+<!-- بخش خدمات -->
+<div class="service">
+    <div class="container">
+        <div class="section-header text-center">
+            <p>خدمات ما</p>
+            <h2>خدمات با کیفیت برای نیازهای شما</h2>
+        </div>
+        <div class="row">
+            {% for service in services %}
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="service-item">
+                    <div class="service-img">
+                        {% if service.image %}
+                            <img src="{{ service.image.url }}" alt="{{ service.title }}">
+                        {% else %}
+                            <img src="{{ service.image.url }}" alt="{{ service.title }}">
+                        {% endif %}
+                        <div class="service-overlay">
+                            <p>{{ service.content|truncatechars:100 }}</p>
+                        </div>
+                    </div>
+                    <div class="service-text">
+                        <h3>{{ service.title }}</h3>
+                        {% if service.service_link %}
+                            <a class="btn" href="{{ service.service_link }}">+</a>
+                        {% else %}
+                            <a class="btn" href="{{ service.image.url }}" data-lightbox="service">+</a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            {% empty %}
+            <div class="col-12 text-center">
+                <p>هیچ خدمتی یافت نشد</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<!-- پایان بخش خدمات -->
+{% endblock %}

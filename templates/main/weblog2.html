@@ -1,0 +1,36 @@
+{% load static %}
+<!-- شروع بخش وبلاگ -->
+<div class="blog">
+    <div class="container">
+        <div class="section-header text-center">
+            <p>مقالات تخصصی صنعت</p>
+            <h2>آخرین دستاوردها و فناوری‌های صنعتی</h2>
+        </div>
+        <div class="row">
+            <!-- نمایش سه پروژه آخر -->
+            {% for project in active_projects|slice:":3" %}
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+                <div class="blog-item">
+                    <div class="blog-img">
+                        <img src="{{ project.image.url }}" alt="{{ project.title }}">
+                    </div>
+                    <div class="blog-title">
+                        <h3>{{ project.title }}</h3>
+                        <a class="btn" href="{{ project.image.url }}" data-lightbox="portfolio">+</a>
+                    </div>
+                    <div class="blog-meta">
+                        <p>وضعیت: <a href="">{{ project.get_status_display }}</a></p>
+                        <p>دسته‌بندی: <a href="">{{ project.category.name }}</a></p>
+                    </div>
+                    <div class="blog-text">
+                        <p>
+                            {{ project.description|linebreaks }}
+                        </p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<!-- پایان بخش وبلاگ -->

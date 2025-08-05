@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static%}
+{%  block content %} 
+            <!-- شروع هدر صفحه -->
+            <div class="page-header">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <h2>درباره ما</h2>
+                        </div>
+                        <div class="col-12">
+                            <a href="">صفحه اصلی</a>
+                            <a href="">درباره ما</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- پایان هدر صفحه -->
+            {% load static %}
+            
+            {%  block about2 %} {% include 'about2.html' %} {% endblock %}
+
+            {%  block number2 %} {% include 'number2.html' %} {% endblock %}
+
+            {%  block question2 %} {% include 'question2.html' %} {% endblock %}
+            
+            <!-- FOOTER -->
+{% endblock %}
